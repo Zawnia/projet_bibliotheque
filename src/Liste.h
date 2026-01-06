@@ -5,9 +5,13 @@
 using namespace std;
 
 template <typename T>
-class Liste
-{
+class Liste {
+/*TODO*/
+
 };
+
+
+
 
 template <typename T>
 class Noeud
