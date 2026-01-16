@@ -15,7 +15,8 @@ Livre::~Livre()
 {
 }
 
-virtual void Livre::afficher() const
+
+void Livre::afficher() const
 {
     std::cout << "Titre : " << titre << "\n"
               << "Code : " << code << "\n"
