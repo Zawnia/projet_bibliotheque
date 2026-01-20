@@ -1,7 +1,7 @@
 #ifndef BANDEDESSINEE_H
 #define BANDEDESSINEE_H
 
-#include "Livre.h"
+#include "../Livre.h"
 #include <string>
 
 class BandeDessinee : public Livre {
@@ -13,10 +13,8 @@ public:
     BandeDessinee(const std::string& titre,
                   const std::string& auteur,
                   const std::string& isbn,
-                  const std::string& categorie,
-                  const std::string& dessinateur,
-                  const std::string& scenariste,
-                  int tome);
+                  Public publicCible,
+                  const std::string& dessinateur);
 
     virtual ~BandeDessinee();
 

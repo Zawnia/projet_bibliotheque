@@ -1,7 +1,7 @@
 #ifndef RECUEILPOESIE_H
 #define RECUEILPOESIE_H
 
-#include "Livre.h"
+#include "../Livre.h"
 #include <string>
 
 class RecueilPoesie : public Livre {
@@ -13,7 +13,7 @@ public:
     RecueilPoesie(const std::string& titre,
                   const std::string& auteur,
                   const std::string& isbn,
-                  const std::string& categorie,
+                  Public publicCible,
                   const std::string& courantLitteraire);
 
     virtual ~RecueilPoesie();
