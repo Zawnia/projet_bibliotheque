@@ -1,20 +1,20 @@
 #ifndef PIECETHEATRE_H
 #define PIECETHEATRE_H
 
-#include "Livre.h"
+#include "../Livre.h"
 #include <string>
 #include <ostream>
 
 class PieceTheatre : public Livre {
 private:
-    int siecle; // siècle de la pièce
+    int siecle;
 
 public:
     PieceTheatre();
     PieceTheatre(const std::string& titre,
                  const std::string& auteur,
                  const std::string& isbn,
-                 const std::string& categorie,
+                 Public publicCible,
                  int siecle);
 
     virtual ~PieceTheatre();

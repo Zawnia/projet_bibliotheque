@@ -19,6 +19,7 @@ public:
     void afficherLivresParCategorie(const std::string& categorie) const;
 
     void ajouterLivre(Livre* livre);
+    void acheterLivre(Livre* livre);
     void inscrireAdherent(Adherent* adherent);
 
     Livre* chercherLivreParCode(int code) const;

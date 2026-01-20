@@ -1,19 +1,19 @@
 #ifndef ALBUM_H
 #define ALBUM_H
 
-#include "Livre.h"
+#include "../Livre.h"
 #include <string>
 
 class Album : public Livre {
 private:
-    std::string typeIllustration; // "photo", "dessin" ou "les deux"
+    std::string typeIllustration;
 
 public:
     Album();
     Album(const std::string& titre,
           const std::string& auteur,
           const std::string& isbn,
-          const std::string& categorie,
+          Public publicCible,
           const std::string& typeIllustration);
 
     virtual ~Album();
