@@ -16,7 +16,7 @@ public:
     Bibliotheque(const std::string& nom);
 
     void afficherLivres() const;
-    void afficherLivresParCategorie(const std::string& categorie) const;
+    void afficherLivresParCategorie(CategorieLivre categorieVoulue) const;
 
     void ajouterLivre(Livre* livre);
     void acheterLivre(Livre* livre);

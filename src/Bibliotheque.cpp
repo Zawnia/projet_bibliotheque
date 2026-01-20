@@ -33,24 +33,27 @@ void Bibliotheque::afficherLivres() const {
     std::cout << std::endl;
 }
 
-void Bibliotheque::afficherLivresParCategorie(const std::string& categorie) const {
-    CategorieLivre categorieVoulue;
-    if (categorie == "Roman") {
-        categorieVoulue = ROMAN;
-    } else if (categorie == "BandeDessinee") {
-        categorieVoulue = BANDE_DESSINEE;
-    } else if (categorie == "PieceTheatre") {
-        categorieVoulue = PIECE_THEATRE;
-    } else if (categorie == "RecueilPoesie") {
-        categorieVoulue = RECUEIL_POESIE;
-    } else if (categorie == "Album") {
-        categorieVoulue = ALBUM;
-    } else {
-        std::cout << "Catégorie inconnue : " << categorie << std::endl;
-        return;
+void Bibliotheque::afficherLivresParCategorie(CategorieLivre categorieVoulue) const {
+    std::cout << "Affichage par categorie non detaille (Liste simple)" << std::endl;
+    std::string nomCategorie;
+    switch (categorieVoulue) {
+        case ROMAN:
+            nomCategorie = "Roman";
+            break;
+        case BANDE_DESSINEE:
+            nomCategorie = "BandeDessinee";
+            break;
+        case PIECE_THEATRE:
+            nomCategorie = "PieceTheatre";
+            break;
+        case RECUEIL_POESIE:
+            nomCategorie = "RecueilPoesie";
+            break;
+        case ALBUM:
+            nomCategorie = "Album";
+            break;
     }
-
-    std::cout << "Livres de la catégorie " << categorie << " :" << std::endl;
+    std::cout << "Livres de la catégorie " << nomCategorie << " :" << std::endl;
     Noeud<Livre*>* courant = livres.tete;
     int compteur = 1;
     bool trouve = false;

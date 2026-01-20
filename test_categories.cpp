@@ -33,10 +33,10 @@ int main() {
     bibliotheque.afficherLivres();
     
     std::cout << "\n4. Affichage des livres de la categorie 'Roman'..." << std::endl;
-    bibliotheque.afficherLivresParCategorie("Roman");
+    bibliotheque.afficherLivresParCategorie(ROMAN);
     
     std::cout << "\n5. Affichage des livres de la categorie 'BandeDessinee'..." << std::endl;
-    bibliotheque.afficherLivresParCategorie("BandeDessinee");
+    bibliotheque.afficherLivresParCategorie(BANDE_DESSINEE);
     
     std::cout << "\n6. Suppression d'un livre..." << std::endl;
     try {
@@ -52,7 +52,7 @@ int main() {
     
     std::cout << "\n8. Verification que le livre supprime n'apparait plus..." << std::endl;
     std::cout << "   Affichage des Romans (il ne devrait en rester qu'un)..." << std::endl;
-    bibliotheque.afficherLivresParCategorie("Roman");
+    bibliotheque.afficherLivresParCategorie(ROMAN);
     
     std::cout << "\n=== Fin du test ===" << std::endl;
     return 0;
