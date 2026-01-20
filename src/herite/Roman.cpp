@@ -2,7 +2,9 @@
 #include <iostream>
 #include <string>
 
-Roman::Roman(): Livre(), genre(LITTERATURE) {}
+Roman::Roman(): Livre(), genre(LITTERATURE) {
+    categorie = ROMAN;
+}
 
 Roman::Roman(const std::string& titre,
              const std::string& auteur,
@@ -10,7 +12,9 @@ Roman::Roman(const std::string& titre,
              Public publicCible,
              GenreRoman genre)
     : Livre(titre, auteur, isbn, publicCible),
-      genre(genre) {}
+      genre(genre) {
+    categorie = ROMAN;
+}
 
 Roman::~Roman() {}
 

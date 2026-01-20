@@ -51,3 +51,8 @@ Public Livre::getPublicCible() const
 {
     return publicCible;
 }
+
+CategorieLivre Livre::getCategorie() const
+{
+    return categorie;
+}

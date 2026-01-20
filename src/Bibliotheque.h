@@ -23,9 +23,12 @@ public:
     void inscrireAdherent(Adherent* adherent);
 
     Livre* chercherLivreParCode(int code) const;
+    Livre* chercherLivreParISBN(const std::string& isbn) const;
     Adherent* chercherAdherent(int numero) const;
 
     void emprunterLivre(int numeroAdherent, int codeLivre);
+    void supprimerLivre(int codeLivre);
+    void demanderLivre(const std::string& isbn, Bibliotheque& autre);
 };
 
 #endif
