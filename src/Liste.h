@@ -23,8 +23,6 @@ public:
     Noeud(T donnee) : info(donnee), suiv(NULL) {}
 };
 
-class Bibliotheque;
-
 template <typename T>
 class Liste
 {

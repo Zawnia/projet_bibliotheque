@@ -53,6 +53,7 @@ void Bibliotheque::afficherLivresParCategorie(CategorieLivre categorieVoulue) co
             nomCategorie = "Album";
             break;
     }
+    
     std::cout << "Livres de la catégorie " << nomCategorie << " :" << std::endl;
     Noeud<Livre*>* courant = livres.tete;
     int compteur = 1;
