@@ -55,10 +55,25 @@ Ce projet intègre impérativement les notions techniques suivantes :
 
 Le projet ne nécessite aucune bibliothèque externe hors standard C++.
 
-**Via g++ (Terminal) :**
+**Compilation**
 ```bash
-g++ -o projet_bibliotheque *.cpp
-./projet_bibliotheque
+g++ -o main.exe main.cpp src/*.cpp src/herite/*.cpp
+
+g++ -o test_liste.exe test_liste.cpp src/*.cpp src/herite/*.cpp
+
+g++ -o test_heritage.exe test_heritage.cpp src/*.cpp src/herite/*.cpp
+
+g++ -o test_categories.exe test_categories.cpp src/*.cpp src/herite/*.cpp
+
+g++ -o test_echange.exe test_echange.cpp src/*.cpp src/herite/*.cpp
 ```
 
+Execution :
+```bash
+./main.exe
+./test_liste.exe
+./test_heritage.exe
+./test_categories.exe
+./test_echange.exe
+```
 

@@ -33,14 +33,61 @@ void Bibliotheque::afficherLivres() const {
     std::cout << std::endl;
 }
 
-void Bibliotheque::afficherLivresParCategorie(const std::string& categorie) const {
+void Bibliotheque::afficherLivresParCategorie(CategorieLivre categorieVoulue) const {
     std::cout << "Affichage par categorie non detaille (Liste simple)" << std::endl;
+    std::string nomCategorie;
+    switch (categorieVoulue) {
+        case ROMAN:
+            nomCategorie = "Roman";
+            break;
+        case BANDE_DESSINEE:
+            nomCategorie = "BandeDessinee";
+            break;
+        case PIECE_THEATRE:
+            nomCategorie = "PieceTheatre";
+            break;
+        case RECUEIL_POESIE:
+            nomCategorie = "RecueilPoesie";
+            break;
+        case ALBUM:
+            nomCategorie = "Album";
+            break;
+    }
+    
+    std::cout << "Livres de la catégorie " << nomCategorie << " :" << std::endl;
+    Noeud<Livre*>* courant = livres.tete;
+    int compteur = 1;
+    bool trouve = false;
+    while (courant != NULL) {
+        if (courant->info->getCategorie() == categorieVoulue) {
+            std::cout << "\nLivre " << compteur << " :" << std::endl;
+            courant->info->afficher();
+            trouve = true;
+            compteur++;
+        }
+        courant = courant->suiv;
+    }
+    if (!trouve) {
+        std::cout << "Aucun livre trouvé dans cette catégorie." << std::endl;
+    }
+    std::cout << std::endl;
 }
 
 Livre* Bibliotheque::chercherLivreParCode(int code) const {
     Noeud<Livre*>* courant = livres.tete;
     while (courant != NULL) {
         if (courant->info->getCode() == code) {
+            return courant->info;
+        }
+        courant = courant->suiv;
+    }
+    return NULL;
+}
+
+Livre* Bibliotheque::chercherLivreParISBN(const std::string& isbn) const {
+    Noeud<Livre*>* courant = livres.tete;
+    while (courant != NULL) {
+        if (courant->info->getISBN() == isbn) {
             return courant->info;
         }
         courant = courant->suiv;
@@ -71,4 +118,24 @@ void Bibliotheque::emprunterLivre(int numeroAdherent, int codeLivre) {
     }
 
     adherent->emprunter(livre);
+}
+
+void Bibliotheque::supprimerLivre(int codeLivre) {
+    Livre* livre = chercherLivreParCode(codeLivre);
+    if (livre == NULL) {
+        throw std::runtime_error("Livre non trouvé");
+    }
+    livres.supprimer(livre);
+}
+
+void Bibliotheque::demanderLivre(const std::string& isbn, Bibliotheque& autre) {
+    Livre* livre = autre.chercherLivreParISBN(isbn);
+    if (livre == NULL) {
+        throw std::runtime_error("Livre non trouvé dans l'autre bibliothèque");
+    }
+    if (livre->getEtat() != LIBRE) {
+        throw std::runtime_error("Livre non libre");
+    }
+    autre.supprimerLivre(livre->getCode());
+    ajouterLivre(livre);
 }

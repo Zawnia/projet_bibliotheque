@@ -2,7 +2,9 @@
 #include <iostream>
 
 PieceTheatre::PieceTheatre()
-    : Livre(), siecle(0) {}
+    : Livre(), siecle(0) {
+    categorie = PIECE_THEATRE;
+}
 
 PieceTheatre::PieceTheatre(const std::string& titre,
                            const std::string& auteur,
@@ -10,7 +12,9 @@ PieceTheatre::PieceTheatre(const std::string& titre,
                            Public publicCible,
                            int siecle)
     : Livre(titre, auteur, isbn, publicCible),
-      siecle(siecle) {}
+      siecle(siecle) {
+    categorie = PIECE_THEATRE;
+}
 
 PieceTheatre::~PieceTheatre() {}
 

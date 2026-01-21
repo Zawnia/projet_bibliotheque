@@ -2,7 +2,9 @@
 #include <iostream>
 
 RecueilPoesie::RecueilPoesie()
-    : Livre(), courantLitteraire("") {}
+    : Livre(), courantLitteraire("") {
+    categorie = RECUEIL_POESIE;
+}
 
 RecueilPoesie::RecueilPoesie(const std::string& titre,
                              const std::string& auteur,
@@ -10,7 +12,9 @@ RecueilPoesie::RecueilPoesie(const std::string& titre,
                              Public publicCible,
                              const std::string& courantLitteraire)
     : Livre(titre, auteur, isbn, publicCible),
-      courantLitteraire(courantLitteraire) {}
+      courantLitteraire(courantLitteraire) {
+    categorie = RECUEIL_POESIE;
+}
 
 RecueilPoesie::~RecueilPoesie() {}
 

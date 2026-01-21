@@ -2,7 +2,9 @@
 #include <iostream>
 
 BandeDessinee::BandeDessinee()
-    : Livre(), dessinateur("") {}
+    : Livre(), dessinateur("") {
+    categorie = BANDE_DESSINEE;
+}
 
 BandeDessinee::BandeDessinee(const std::string& titre,
                              const std::string& auteur,
@@ -10,7 +12,9 @@ BandeDessinee::BandeDessinee(const std::string& titre,
                              Public publicCible,
                              const std::string& dessinateur)
         : Livre(titre, auteur, isbn, publicCible),
-            dessinateur(dessinateur) {}
+            dessinateur(dessinateur) {
+    categorie = BANDE_DESSINEE;
+}
 
 BandeDessinee::~BandeDessinee() {}
 

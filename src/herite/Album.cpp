@@ -2,7 +2,9 @@
 #include <iostream>
 
 Album::Album()
-    : Livre(), typeIllustration("") {}
+    : Livre(), typeIllustration("") {
+    categorie = ALBUM;
+}
 
 Album::Album(const std::string& titre,
              const std::string& auteur,
@@ -10,7 +12,9 @@ Album::Album(const std::string& titre,
              Public publicCible,
              const std::string& typeIllustration)
     : Livre(titre, auteur, isbn, publicCible),
-      typeIllustration(typeIllustration) {}
+      typeIllustration(typeIllustration) {
+    categorie = ALBUM;
+}
 
 Album::~Album() {}
 

@@ -16,6 +16,14 @@ enum Public {
     TOUT_PUBLIC
 };
 
+enum CategorieLivre {
+    ROMAN,
+    BANDE_DESSINEE,
+    PIECE_THEATRE,
+    RECUEIL_POESIE,
+    ALBUM
+};
+
 class Livre {
 protected:
     static int prochainCode;
@@ -26,6 +34,7 @@ protected:
     std::string isbn;
     Public publicCible;
     Etat etat;
+    CategorieLivre categorie;
 
 public:
     Livre(const std::string& titre, const std::string& auteur, const std::string& isbn, Public publicCible);
@@ -42,6 +51,7 @@ public:
     std::string getTitre() const;
     std::string getAuteur() const;
     Public getPublicCible() const;
+    CategorieLivre getCategorie() const;
 };
 
 #endif
